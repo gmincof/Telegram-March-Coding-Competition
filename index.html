@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Telegram March Coding Competition</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="./main.css" />
+  </head>
+  <body>
+    <script src="./chart_data.js"></script>
+    <script src="./chart.js"></script>
+    <script>
+      console.log(chartData);
+      const charts = document.createDocumentFragment();
+
+      window.chartData.forEach(chartData => {
+        const chartElem = document.createElement("div");
+        new window.Chart(chartElem, chartData);
+        charts.appendChild(chartElem);
+      });
+
+      document.body.appendChild(charts);
+    </script>
+  </body>
+</html>

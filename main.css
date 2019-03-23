@@ -1,0 +1,65 @@
+body {
+  margin: 0;
+  padding: 0;
+  counter-reset: charts;
+}
+
+.chart {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+}
+
+.chart h1 {
+  background-color: #f2f4f5;
+  margin: 0;
+  padding: 20px;
+}
+
+.chart h1::before {
+  content: "Chart #" counter(charts);
+  counter-increment: charts;
+}
+
+.chart-view {
+  flex-grow: 1;
+  position: relative;
+}
+
+.chart-thumbnail {
+  height: 100px;
+  position: relative;
+}
+
+.chart-view svg,
+.chart-thumbnail svg {
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform: rotate(180deg) scaleX(-1);
+  width: 100%;
+}
+
+.chart-switches {
+  display: flex;
+  padding: 20px;
+}
+
+.chart-switches label {
+  align-items: center;
+  border: 1px solid #f2f4f5;
+  display: flex;
+  margin-right: 20px;
+  padding: 10px;
+}
+
+.chart-switches input {
+  margin-right: 10px;
+}
+
+.hide {
+  visibility: hidden;
+}
